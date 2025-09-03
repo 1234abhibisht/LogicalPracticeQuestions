@@ -1,9 +1,9 @@
 /* ncr = n!/r!(n-r)! */
 /* ncr = n!/r!(n-r)! */
 #include <stdio.h>
-int fact(int n) {  /* this function is for factoral loop */
+int fact(int a) {  /* this function is for factoral loop */
    int mul = 1;
-    for(int i = n; i >= 1; i--) {
+    for(int i = a; i >= 1; i--) {
         mul = mul * i;
     }
     return mul;
