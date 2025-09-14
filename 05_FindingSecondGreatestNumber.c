@@ -1,29 +1,48 @@
 #include <stdio.h>
-int Secondgreatest(int n, int num[]) {
-    int max = num[0];
-    int max2 = 0;
-    for(int i = 1; i <= n-1; i++) {
-        if(num[i] > max) {
-            max2 = max;
-            max = num[i];
-        }
-        else if(max > num[i] && max != num[i]) {
-            max2 == num[i];
-        }
-        else printf("Invalid Operation");
+int countnumber(int a) {
+    int count = 0;
+    while(a != 0) {
+        a = a / 10;
+        count++;
     }
-    printf("Second Greatest number is : %d",max2);
-    return max;
+    return count;
+}
+void Secondgreatest(int n,int num[]) {
+    int great = num[0];
+    int secondgreat = num[1];
+    int x;
+    if(secondgreat > great) {  /* swapped great and secondgreat */
+        x = great;
+        great = secondgreat;
+        secondgreat = x;
+    }
+    for(int i = 2; i <= countnumber(n)-1; i++) {
+        if(num[i] > great) {
+            secondgreat = great;
+            great = num[i];
+        }
+        else if(num[i] < great && num[i] > secondgreat) {
+            secondgreat = num[i];
+        }
+    }
+    printf("Second Greatest number is : %d",secondgreat);
 }
 int main() {
+    /* I have asked user a number of any digit and stored it in a variable named n*/
     int n;
-    printf("Enter how many numbers you want to compare : ");
-    scanf("%d",&n);
-    int num[n];
     printf("Enter your numbers : ");
-    for(int i = 0; i <= n-1; i++) {
-        scanf("%d",&num[i]);
+    scanf("%d",&n);
+    int lastdigit = 0;
+    int a = n;  /* as n will be 0 after n = n / 10*/
+    int x = countnumber(n);
+    /* now I have counted number of digits in the number and made an array having containers 
+       according to the number of digits */
+    int num[x];
+    for(int i = x - 1; i >= 0; i--) {
+        lastdigit = n % 10;
+        num[i] = lastdigit;
+        n = n / 10;
     }
-    Secondgreatest(n,num);
-    return 0   ;
+    Secondgreatest(a,num);
+    return 0;
 }
