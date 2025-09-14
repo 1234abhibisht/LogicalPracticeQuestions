@@ -1,5 +1,5 @@
 #include <stdio.h>
-int product(int n) {
+void product(int n) {
     int mul = 1;
     int a = n;
     while(n != 0) {
