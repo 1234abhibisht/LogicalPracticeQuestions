@@ -3,7 +3,7 @@
    1 will not be considered in n, it is added as seperate value */
 
 #include <stdio.h>
-int seriessum(int n) {
+void seriessum(int n) {
     int arr1[n];  /* this array is to store numerator values */
     int x = 0;
     for(int i = 3; i <= (n * 2) + 1; i = i + 2) {
