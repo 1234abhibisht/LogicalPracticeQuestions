@@ -6,7 +6,7 @@ int factorial(int a) {
     }
     return mul;
 }
-int strongnumber(int n) {
+void strongnumber(int n) {
     int sum = 0;
     int x = n;
     while(n != 0) {
