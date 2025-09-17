@@ -1,5 +1,5 @@
 #include <stdio.h>
-int factors(int n) {
+void factors(int n) {
     int j = 0;
     int arr[n - 1];
     for(int i = 1; i <= n - 1; i++) {
