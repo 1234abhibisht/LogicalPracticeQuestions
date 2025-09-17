@@ -1,7 +1,7 @@
 /* print sum of series 2/3 + 4/7 + 6/11.... upto n terms */
 
 #include <stdio.h>
-int seriessum(int n) {
+void seriessum(int n) {
     int arr1[n];  /* this array is to store numerator values */
     int x = 0;
     for(int i = 2; i <= n * 2; i = i + 2) {
