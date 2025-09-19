@@ -34,6 +34,7 @@ void BMI(float w, float h, char f) {
     else if(Bmi > 40) {
         printf("Morbidity Obese");
     }
+    return
 }
 int main() {
     float weight;
