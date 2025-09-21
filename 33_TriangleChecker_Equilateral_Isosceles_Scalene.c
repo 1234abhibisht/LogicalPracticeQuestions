@@ -15,6 +15,7 @@ void triangleCheck(int a, int b, int c) {
     else {
         printf("Triangle is not valid");
     }
+    return;
 }
 int main() {
     int a;
