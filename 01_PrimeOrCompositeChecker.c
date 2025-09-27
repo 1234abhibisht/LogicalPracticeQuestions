@@ -1,30 +1,38 @@
 #include <stdio.h>
-void PrimeComposite(int n)
+void primeComposite(int n)
 {
-    int a = 0;
+    int x;
     for (int i = 2; i <= n - 1; i++)
     {
-        if (n % i == 0) {
-            a = 1;
+        if (n % 2 == 0)
+        {
+            x = 1;
+            break;
         }
-        else {
-            a = 0;
+        else
+        {
+            x = 0;
         }
-        break;
     }
     if (n == 1)
+    {
         printf("%d is neither prime nor composite", n);
-    else if (a == 1)
-        printf("%d is composite", n);
+    }
+    else if (x == 1)
+    {
+        printf("%d is a composite number", n);
+    }
     else
-        printf("%d is prime", n);
+    {
+        printf("%d is a prime number", n);
+    }
     return;
 }
 int main()
 {
     int n;
-    printf("Enter a number : ");
+    printf("Enter a number to check whether it is prime or composite : ");
     scanf("%d", &n);
-    PrimeComposite(n);
+    primeComposite(n);
     return 0;
 }
