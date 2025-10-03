@@ -11,10 +11,13 @@ int fact(int a)
     return mul;
 }
 int Combination(int n, int r)
-{                    /* this function is for using loop in formula */
-    int x = fact(n); /* here I have use fact(n) because I want to take factorial of n not of a variable */
-    int y = fact(r) * fact(n - r);
-    printf("Combination of %d and %d is : %d", n, r, x / y);
+{
+    if (r == n || r == 0)
+    {
+        return 1;
+    }
+    int comb = fact(n) / (fact(r) * fact(n - r));
+    return comb;
 }
 int main()
 {
@@ -26,5 +29,6 @@ int main()
     scanf("%d", &r);
     fact(n);
     Combination(n, r);
+    printf("Factorial of %d and %d is %d", n, r, Combination(n, r));
     return 0;
 }
