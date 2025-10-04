@@ -20,11 +20,11 @@ int main()
     scanf("%d", &secondnumber);
     if (firstnumber < secondnumber)
     {
-        printf("Invalid values");
+        /* swap both values */
+        int temp = firstnumber;
+        firstnumber = secondnumber;
+        secondnumber = temp;
     }
-    else
-    {
-        printf("HCF of %d and %d is %d", firstnumber, secondnumber, hcf(firstnumber, secondnumber));
-    }
+    printf("HCF(%d,%d) is %d", firstnumber, secondnumber, hcf(firstnumber, secondnumber));
     return 0;
 }
