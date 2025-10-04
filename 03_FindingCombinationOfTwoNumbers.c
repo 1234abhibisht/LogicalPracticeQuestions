@@ -1,5 +1,4 @@
 /* ncr = n!/r!(n-r)! */
-/* ncr = n!/r!(n-r)! */
 #include <stdio.h>
 int fact(int a)
 { /* this function is for factoral loop */
@@ -29,6 +28,6 @@ int main()
     scanf("%d", &r);
     fact(n);
     Combination(n, r);
-    printf("Factorial of %d and %d is %d", n, r, Combination(n, r));
+    printf("binomial coefficient of %d and %d is %d", n, r, Combination(n, r));
     return 0;
 }
