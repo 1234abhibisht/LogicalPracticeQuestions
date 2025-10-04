@@ -1,43 +1,30 @@
 /* greatest common divisor or highest common factor */
+/* for hcf, first number should be greater than second number*/
 #include <stdio.h>
-int minimum(int firstnumber, int secondnumber)
+int hcf(int firstnumber, int secondnumber)
 {
-    int x;
-    if (firstnumber > secondnumber)
-        x = firstnumber;
-    else
-        x = secondnumber;
-    return x;
-}
-void hcf(int firstnumber, int secondnumber)
-{
-    /* hcf of 2,0 is 2 itself */
     if (secondnumber == 0)
-    {
-        printf("Highest common factor is : %d", firstnumber);
+    { /* base case */
+        return firstnumber;
     }
-    else
-    {
-        int hcfab;
-        for (int i = 1; i <= minimum(firstnumber, secondnumber); i++)
-        {
-            if (firstnumber % i == 0 && secondnumber % i == 0)
-            {
-                hcfab = i;
-            }
-        }
-        printf("Highest common factor is : %d", hcfab);
-    }
-    return;
+    int x = hcf(secondnumber, firstnumber % secondnumber);
+    return x;
 }
 int main()
 {
     int firstnumber;
-    printf("Enter first number : ");
+    printf("Enter firs tnumber : ");
     scanf("%d", &firstnumber);
     int secondnumber;
     printf("Enter second number : ");
     scanf("%d", &secondnumber);
-    hcf(firstnumber, secondnumber);
+    if (firstnumber < secondnumber)
+    {
+        printf("Invalid values");
+    }
+    else
+    {
+        printf("HCF of %d and %d is %d", firstnumber, secondnumber, hcf(firstnumber, secondnumber));
+    }
     return 0;
 }
